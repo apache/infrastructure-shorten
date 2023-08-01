@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf8">
+    <link href="https://www.apache.org/css/styles.css" rel="stylesheet">
+    <title>Apache URL Shortener</title>
+</head>
+<body style="margin: 5px; padding: 0px;">
+<img src="https://www.apache.org/img/asf_logo.png"/>
+<h2 style="margin: 0;">URL shortening service</h2>
+
+<form action="/s/new" method="post" style="font-family: sans-serif; font-size: 1rem; font-weight: normal; line-height: 2rem;">
+    <div>
+        <div style="display: inline-block; width: 200px;"><b>URL to shorten:</b></div>
+        <div style="display: inline-block; width: 600px;"><input type="text" name="url" style="width: 400px;"/> (must be a valid URL)</div>
+    </div>
+    <div>
+        <div style="display: inline-block; width: 200px;"><b>ID:</b></div>
+        <div style="display: inline-block; width: 600px;"><input type="text" name="uid" style="width: 160px;" placeholder="accepts [-._a-zA-Z0-9]+"/> (Optional, leave blank to auto-generate)</div>
+    </div>
+    <small><input type="checkbox" name="override" value="yes" id="override"/><label for="override">Override existing link (only available to link owners and root@</label>).</small><br/>
+    <input type="submit" value="Get short-URL"/>
+</form>
+<p style="font-size: 0.8rem; margin-top: 30px;">
+    Need to look at your old short-URLS? Find them here:
+    <a href='/s/private?action=list'>JSON format</a> -
+    <a href='/s/private?action=list&raw=1'>Raw text</a>
+</p>
+<footer style="font-size: 0.9rem; font-style: italic;">
+    Copyright 2023, the Apache Software Foundation.
+</footer>
+</body>
+</html>

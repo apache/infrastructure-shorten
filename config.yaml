@@ -1,0 +1,11 @@
+port: 8082   # Port to listen on, localhost is always implied.
+db: /x1/shorten/shortlinks.db  # Where to store/load shortlinks to/from
+valid_id_characters: ".-_abcdefghijklmnopqrstuvwxyz0123456789"  # valid characters in new shortlink IDs
+admins:   # Folks that may override old links
+  - christ
+  - cml
+  - dfoulks
+  - gmcdonald
+  - gstein
+  - humbedooh
+  - iroh

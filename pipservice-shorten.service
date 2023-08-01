@@ -1,0 +1,15 @@
+[Unit]
+Description=ASF URL Shortener
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/shorten
+ExecStart=/usr/local/bin/pipenv run python3 shorten.py
+Restart=always
+User=www-data
+Group=www-data
+StandardError=journal
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
