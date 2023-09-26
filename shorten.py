@@ -49,8 +49,8 @@ async def find_short_link(_err):
         uid, url_suffix = uid.split("/", maxsplit=1)
     if uid in url_cache:
         origin = url_cache[uid]["url"]
-        if url_suffix:
-            origin += "/" + url_suffix
+        if url_suffix:  # Strip trailing slash if needed, then add one, and then the suffix
+            origin = origin.rstrip("/") + "/" + url_suffix
         return quart.Response(response=f"{origin}\n", status=302, headers={"Location": origin})
     # No such short link? 404!
     return quart.Response(response=f"No such short link: {uid}\n", status=404, headers={"Content-Type": "text/plain"})
