@@ -91,7 +91,7 @@ async def store_url():
                     {"Content-Type": "text/plain"},
                 )
 
-        elif any(char not in config["valid_id_characters"] for char in link_id):
+        elif any(char not in config["valid_id_characters"] for char in link_id.lower()):
             return (
                 f"The provided link ID contains characters that are not allowed.\n",
                 400,
